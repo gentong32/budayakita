@@ -10,31 +10,8 @@
   <link rel="shortcut icon" href="<?=base_url()?>/template/image/favicon.png" type="image/x-icon">
   <!-- Bootstrap , fonts & icons  -->
   <link rel="stylesheet" href="<?=base_url()?>/template/css/bootstrap.css">
-  <link rel="stylesheet" href="<?=base_url()?>/template/fonts/icon-font/css/style.css">
-  <link rel="stylesheet" href="<?=base_url()?>/template/fonts/typography-font/typo.css">
-  <link rel="stylesheet" href="<?=base_url()?>/template/fonts/fontawesome-5/css/all.css">
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">	
-	<link href="https://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
-	
-  <!-- Plugin'stylesheets  -->
-  <link rel="stylesheet" href="<?=base_url()?>/template/plugins/aos/aos.min.css">
-  <link rel="stylesheet" href="<?=base_url()?>/template/plugins/fancybox/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="<?=base_url()?>/template/plugins/nice-select/nice-select.min.css">
-  <link rel="stylesheet" href="<?=base_url()?>/template/plugins/slick/slick.min.css">
-  <!-- Vendor stylesheets  -->
-  <link rel="stylesheet" href="<?=base_url()?>/template/css/main.css?ver=1.2">
-  <!-- Custom stylesheet -->
-  <link rel="stylesheet" href="<?=base_url()?>/template/css/select2.min.css">
-  <link rel="stylesheet" href="<?=base_url()?>/template/css/custom.css">
-  <!-- Autocomplete -->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-   
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
 </head>
 
 <body data-theme-mode-panel-active data-theme="light" style="font-family: 'Mazzard H';">
@@ -67,29 +44,23 @@
               </div>
               <ul class="site-menu-main">
 				<li class="nav-item">
-                  <a href="<?=site_url()?>" class="nav-link-item">Beranda</a>
+                  <a href="index.html" class="nav-link-item">Beranda</a>
                 </li>
 				<li class="nav-item">
-                  <a href="<?=site_url('cagarbudaya')?>" class="nav-link-item">Cagar&nbsp;Budaya</a>
+                  <a href="cagar-budaya.html" class="nav-link-item">Cagar&nbsp;Budaya</a>
                 </li>
 				<li class="nav-item">
-                  <a href="<?=site_url('wbtb')?>" class="nav-link-item">Warisan&nbsp;Budaya&nbsp;Takbenda</a>
+                  <a href="wbtb.html" class="nav-link-item">Warisan&nbsp;Budaya&nbsp;Takbenda</a>
                 </li>
-				<li class="nav-item">
-                  <a href="<?=site_url('lembaga')?>" class="nav-link-item">Lembaga&nbsp;Kebudayaan</a>
-                </li>
-				<li class="nav-item">
-                  <a href="<?=site_url('maestro')?>" class="nav-link-item">Maestro</a>
-                </li>
-				<!-- <li class="nav-item nav-item-has-children">
+				<li class="nav-item nav-item-has-children">
                   <a href="#" class="nav-link-item drop-trigger">Lembaga&nbsp;Kebudayaan<i class="fas fa-angle-down"></i>
                   </a>
                   <ul class="sub-menu">
                     <li class="sub-menu--item">
-                    <a href="<?//=site_url('museum')?>">Museum</a>
+                  <a href="<?=site_url('museum')?>">Museum</a>
 					</li>
 					<li class="sub-menu--item">
-					  <a href="<?//=site_url('sanggar')?>">Sanggar</a>
+					  <a href="<?=site_url('sanggar')?>">Sanggar</a>
 					</li>
 					<li class="sub-menu--item">
 					  <a href="#">Taman Budaya</a>
@@ -101,11 +72,16 @@
                   </a>
                   <ul class="sub-menu">
                     <li class="sub-menu--item">
-                      <a href="<?//=site_url('maestro')?>">Maestro</a>
+                      <a href="<?=site_url('maestro')?>">Maestro</a>
                     </li>
-				
+					<!-- <li class="sub-menu--item">
+                      <a href="#">Sarana Prasarana</a>
+                    </li>
+					<li class="sub-menu--item">
+                      <a href="#">Substansi Kebudayaan</a>
+                    </li> -->
 				  </ul>
-				</li> -->
+				</li>
 				<!-- <li class="nav-item nav-item-has-children">
                   <a href="#" class="nav-link-item drop-trigger">Fitur&nbsp;Lain<i class="fas fa-angle-down"></i>
                   </a>
@@ -144,6 +120,12 @@
 				<h3>berbagai informasi mengenai objek kebudayaan Indonesia di sini.</h3>
               <!-- <p>Profil Objek Kebudayaan, Warisan Budaya Benda dan Warisan Budaya Tak Benda di 514 Kab/Kota.</p>-->
 	<!-- search -->
+  <select class="js-example-basic-single" id="kode_wilayah" name="kode_wilayah" style="width: 100%;">
+                            <option  value="">Seluruh Indonesia</option>
+                            <?php foreach ($datakota as $key => $value) :?>
+                            <option value="<?=$value->mst_kode_wilayah?>"><?=$value->namakota?></option>
+                            <?php endforeach;?>
+                        </select>
 			  <div class="location-search-area1">
             
                   <div class="d-sm-flex align-items-center">
@@ -154,28 +136,16 @@
                         </div>
 						
 
-                        <select class="js-example-basic-single" id="kode_wilayah" name="kode_wilayah" 
-                        style="width: 100%;">
-                            <option  value="000000">Seluruh Indonesia</option>
-                            <?php foreach ($datakota as $key => $value) :?>
-                            <option value="<?=$value->kode_wilayah?>"><?=$value->namakota?></option>
-                            <?php endforeach;?>
-                        </select>
+                        
 
                       </div>
-                      
-                      <!-- CSRF token --> 
-                      <input type="hidden" class="txt_csrfname" name="<?= csrf_token() ?>" value="<?= csrf_hash() ?>" />
-                      <input type="hidden" name="kodewilayah" value="" />
-
                       <div class="location-type__input" style="margin-right:5px">
                         <div class="location-type">
                           <label>Nama Objek</label>
                           <input type="text" class="form-control" name="isearch" id="isearch" placeholder="Ketikkan nama objek">
-                          <!-- <div class="position-absolute" id="form2_complete" style="z-index: 99;"></div> -->
-                        </div>
+							<div class="position-absolute invisible" id="form2_complete" style="z-index: 99;"></div>
+						</div>
                       </div>
-
                     </div>
                     <div class="location-search-area__search-btn">
                       <button onclick="return cariobjek()" class="btn btn-style-03 btn--search">Cari</button>
@@ -233,7 +203,7 @@
             <div class="content section-heading-11">
               <h2>Cagar Budaya</h2>
               <p>Berdasarkan Undang-Undang Republik Indonesia Nomor 11 tahun 2010, Cagar Budaya adalah warisan budaya bersifat kebendaan berupa Benda Cagar Budaya, Bangunan Cagar Budaya, Struktur Cagar Budaya, Situs Cagar Budaya, dan Kawasan Cagar Budaya di darat dan/atau di air yang perlu dilestarikan keberadaannya karena memiliki nilai penting bagi sejarah, ilmu pengetahuan, pendidikan, agama, dan/atau kebudayaan melalui proses penetapan.</p>
-              <a href="cagarbudaya" class="btn focus-reset">Lanjut ke Pencarian</a>
+              <a href="cagar-budaya.html" class="btn focus-reset">Lanjut ke Pencarian</a>
             </div>
           </div>
         </div>
@@ -247,7 +217,7 @@
             <div class="content section-heading-1">
               <h2>Warisan Budaya Takbenda</h2>
               <p>Warisan Budaya Takbenda (WBTb) diatur dalam UU No 5 Tahun 2017 tentang pemajuan kebudayaan, beserta objek-objeknya, diantaranya tradisi lisan, manuskrip, adat istiadat, ritus, pengetahuan tradisional, teknologi tradisional, seni, bahasa, permainan rakyat, olahraga tradisional. Dalam pengertiannya, WBTb merupakan peninggalan atau warisan budaya yang sifatnya tidak dapat dipegang (<i>intagible</i>/abstrak) namun ada disekitar kita.</p>
-              <a href="wbtb" class="btn focus-reset">
+              <a href="wbtb.html" class="btn focus-reset">
                 Lanjut ke Pencarian
                 <i class="fas fa-angle-right"></i>
               </a>
@@ -401,16 +371,12 @@
 	
   	
   <!-- Vendor Scripts -->
-
-  <!-- <script src="<?=base_url()?>/template/js/vendor.min.js"></script> -->
-  <!-- Plugin's Scripts -->
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+  
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
   <script src="<?=base_url()?>/template/plugins/fancybox/jquery.fancybox.min.js"></script>
-  <!-- <script src="<?=base_url()?>/template/plugins/nice-select/jquery.nice-select.min.js"></script> -->
+  <script src="<?=base_url()?>/template/plugins/nice-select/jquery.nice-select.min.js"></script>
   <script src="<?=base_url()?>/template/plugins/aos/aos.min.js"></script>
   <script src="<?=base_url()?>/template/plugins/slick/slick.min.js"></script>
   <!-- <script src="../../../porjoton.netlify.app/mekanic/js/waypoints.min.js"></script> -->
@@ -422,7 +388,7 @@
   <script src="<?=base_url()?>/template/plugins/menu/menu.js"></script>
   <!-- Activation Script -->
   <script src="<?=base_url()?>/template/js/custom.js"></script>
-  <!-- <script src="<?=base_url()?>/template/js/autocomplete.js"></script> -->
+  <script src="<?=base_url()?>/template/js/autocomplete.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
   
   <!-- Editable Select Jquery tapi lambat kalau data banyak -->
@@ -434,59 +400,34 @@
 
 </html>
 
-<script type='text/javascript'>
-
-  var kodewilayah;
+<script>
 
   $(document).ready(function() {
       $('.js-example-basic-single').select2();
-      $( "#isearch" ).autocomplete({
-
-      source: function( request, response ) {
-
-        // CSRF Hash
-        var csrfName = $('.txt_csrfname').attr('name'); // CSRF Token name
-        var csrfHash = $('.txt_csrfname').val(); // CSRF hash
-
-        // Fetch data
-        $.ajax({
-            url: "<?=site_url('home/getAuto')?>",
-            type: 'post',
-            dataType: "json",
-            data: {
-              search: request.term,
-              kodwil: $('#kode_wilayah').val(),
-              [csrfName]: csrfHash // CSRF Token
-            },
-            success: function( data ) {
-              // Update CSRF Token
-              $('.txt_csrfname').val(data.token);
-
-              response( data.data );
-            }
-        });
-      },
-      select: function (event, ui) {
-        // Set selection
-        $('#isearch').val(ui.item.label); // display the selected text
-        kodewilayah = ui.item.value; // save selected id to input
-        return false;
-      },
-      focus: function(event, ui){
-        $( "#isearch" ).val( ui.item.label );
-        kodewilayah = ui.item.value;
-        return false;
-      },
-      }); 
   });
 
-  $(document).on('change', '#kode_wilayah', function () {
-    $('#isearch').val("");
-  });
-  
+	$(document).on('change input', '#isearch', function () {
+		$.ajax({
+			type: 'GET',
+			data: {kunci: $('#isearch').val()},
+			dataType: 'json',
+			cache: false,
+			url: '<?=base_url()?>/home/get_autocomplete',
+			success: function (result) {
+				autocomplete_example2 = new Array();
+				var jdata = 0;
+				$.each(result, function (i, result) {
+					jdata++;
+					autocomplete_example2[jdata] = result.value;
+				});
+
+				set_autocomplete('isearch', 'form2_complete', autocomplete_example2, start_at_letters = 1);
+			}
+		});
+	});
+
 	function cariobjek() {
-		var cleanString =kodewilayah;
-		// alert (cleanString);
-    window.open('<?=base_url()?>/home/objek/' + cleanString, '_self');
+		var cleanString = $('#isearch').val().replace(/[|&;$%@"<>()+,]/g, "");
+		window.open('<?=base_url()?>/home/cari/' + cleanString, '_self');
 	}
 </script>

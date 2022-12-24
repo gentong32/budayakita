@@ -36,8 +36,19 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/home/get_autocomplete', 'Home::get_autocomplete');
-
+$routes->post('home/getAuto', 'Home::getAuto');
+$routes->get('home/getAuto', 'Home::getAuto');
+$routes->get('/home/objek/(:any)', 'Home::objek/$1');
+$routes->get('/cagarbudaya', 'Cagarbudaya::index');
+$routes->get('/cagarbudaya/objek/(:any)', 'Cagarbudaya::objek/$1');
+$routes->get('/wbtb', 'Wbtb::index');
+$routes->get('/wbtb/objek/(:any)', 'Wbtb::objek/$1');
+$routes->get('/lembaga', 'Museum::index');
+$routes->get('/lembaga/objek/(:any)', 'Museum::objek/$1');
+// $routes->get('/sanggar', 'Sanggar::index');
+// $routes->get('/sanggar/objek/(:any)', 'Sanggar::objek/$1');
+$routes->get('/maestro', 'Maestro::index');
+$routes->get('/maestro/objek/(:any)', 'Maestro::objek/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
