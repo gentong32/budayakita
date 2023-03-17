@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="<?=base_url()?>/template/plugins/slick/slick.min.css">
   <link rel="stylesheet" href="<?=base_url()?>/template/plugins/slick/slick-theme.css">
   <!-- Vendor stylesheets  -->
-  <link rel="stylesheet" href="<?=base_url()?>/template/css/main.css">
+  <link rel="stylesheet" href="<?=base_url()?>/template/css/main.css?v=1.1">
   <!-- Custom stylesheet -->
 
 

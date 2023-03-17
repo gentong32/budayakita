@@ -229,8 +229,19 @@ $(document).ready( function () {
   });
   
     var data = [];
-    <?php foreach ($daftarcb as $key => $value) :?>
-      data.push([<?=$key + 1?>, "<a href=\"<?=site_url('cagarbudaya/objek/').$value->kode_pengelolaan?>\"><?=$value->kode_pengelolaan?></a>", "<?=$value->nama?>", "<?=$value->Jenis?>","<?=$value->propinsi?>"]);
+   
+    <?php 
+      // $hitung=1;
+      foreach ($daftarcb as $key => $value) :
+      // $hitung++;
+      // if ($hitung>4282)
+      // continue;
+      $namaobjek = str_replace('"', "'", $value->nama);
+      ?>
+
+      
+      
+      data.push([<?=$key + 1?>, "<a href=\"<?=site_url('cagarbudaya/objek/').$value->kode_pengelolaan?>\"><?=$value->kode_pengelolaan?></a>", "<?=$namaobjek?>", "<?=$value->Jenis?>","<?=$value->propinsi?>"]);
       
       <?php endforeach;?>
 

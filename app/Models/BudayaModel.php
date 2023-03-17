@@ -96,7 +96,7 @@ class BudayaModel extends Model
     }
 
     public function getObjCB($kode) {
-        $sql = "SELECT c.nama, no_sk_cb, tanggal, nama_level, jc.Jenis, w1.nama as propinsi, w2.nama as kota, deskripsi, bujur, lintang 
+        $sql = "SELECT c.kode_wilayah,c.nama, no_sk_cb, tanggal, nama_level, jc.Jenis, w1.nama as propinsi, w2.nama as kota, deskripsi, bujur, lintang 
         FROM [Kebudayaan].[dbo].[cagar_budaya] c
         JOIN [Kebudayaan].[dbo].[sk_cb] s 
         ON c.entitas_cb_id = s.entitas_cb_id 
@@ -245,6 +245,27 @@ class BudayaModel extends Model
             'kodepengelolaan' => $kode
         ]);
         
+        return $query;
+    }
+
+    public function getSekolahTerdekat($lintang,$bujur,$kodewilayah) {
+        $sql = "SELECT TOP 5 sekolah_id,npsn,nama,alamat_jalan,
+        ROUND(GEOGRAPHY::Point(lintang , bujur , 4326).STDistance(geography::
+        Point(:lintang:,:bujur:,4326))/1000,2) AS radius,
+        lintang,bujur
+        FROM Arsip.dbo.sekolah
+        WHERE lintang between -90 and 90 AND lintang !=0
+        AND bentuk_pendidikan_id in (5,6,7,8,13,14,15,18,11,12,27,29,53,54,55,40,39)
+        AND LEFT(kode_wilayah,4) = :kodewilayah:
+        AND soft_delete = 0
+        ORDER BY radius";
+
+        $query = $this->db->query($sql, [
+            'lintang' => $lintang,
+            'bujur' => $bujur,
+            'kodewilayah' => $kodewilayah
+        ]);
+
         return $query;
     }
     

@@ -94,7 +94,7 @@
                                                                         <!-- <button class="nav-link active" id="nav-sejarah-tab" data-bs-toggle="tab" data-bs-target="#nav-sejarah" type="button" role="tab" aria-controls="nav-sejarah" aria-selected="true">Sejarah</button> -->
                                                                         <button class="nav-link active" id="nav-peta-tab" data-bs-toggle="tab" data-bs-target="#nav-peta" type="button" role="tab" aria-controls="nav-peta" aria-selected="false">Peta</button>
                                                                         <button class="nav-link" id="nav-deskripsi-tab" data-bs-toggle="tab" data-bs-target="#nav-deskripsi" type="button" role="tab" aria-controls="nav-deskripsi" aria-selected="false">Deskripsi</button>
-                                                                        
+                                                                        <button class="nav-link" id="nav-terdekat-tab" data-bs-toggle="tab" data-bs-target="#nav-terdekat" type="button" role="tab" aria-controls="nav-terdekat" aria-selected="false">Sekolah Terdekat</button>
                                                                     </div>
                                                                 </nav>
                                                                 <div class="tab-content" id="nav-tabContent">
@@ -112,7 +112,13 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="tab-pane fade" id="nav-deskripsi" role="tabpanel" aria-labelledby="nav-deskripsi-tab"><div style="min-height:300px;"><?=$detailcb->deskripsi;?></div></div>
-                                                                    
+                                                                    <div class="tab-pane fade" id="nav-terdekat" role="tabpanel" aria-labelledby="nav-terdekat-tab"><tr>
+                                                    <td><div class="ulsekolah"><ul><?php foreach($sekolahterdekat as $row)
+                                                    {
+                                                        echo "<li><a target='_blank' href='https://sekolah.data.kemdikbud.go.id/index.php/chome/profil/".$row->sekolah_id."'>".$row->nama."</a> (<i>".$row->radius." km</i>)<br>".$row->alamat_jalan."</li>";
+                                                    } ?>
+                                                    </ul></div></td>
+                                                </tr></div>
                                                                 </div>
                                                                 
                                                             </div>
